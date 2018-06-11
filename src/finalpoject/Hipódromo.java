@@ -33,9 +33,8 @@ public class Hipódromo extends JFrame implements ActionListener {
     private JMenuItem miAyuda, miInfo, miSalir;
     private double saldo = 10.00;
     private String mensajeAyuda = "Para poder apostar primero debes ingresa dinero.\n"
-            + "Con el nuevo bono \"El todo por el todo\", le doblamos el primer ingreso.\n"
             + "Para poder ver carreras sin apostar deberá tener dinero en la cuenta y seleccionar"
-            + " \"CaballosTV\", que emite todas las carreras de caballos que hay dentro del recinto.\n"
+            + " \"CaballosTV\", que emite una de las carreras de caballos que hay dentro del recinto.\n"
             + "La opción de \"Comprobar saldo\" le permitirá ver si tiene saldo en su cuenta, su historial"
             + " de apuestas y le da la posibilidad de retirar el dinero, siempre que cumpla los requisitos "
             + "minimos de retirada(30 euros)\n"
@@ -52,10 +51,6 @@ public class Hipódromo extends JFrame implements ActionListener {
 
         info = new JMenu("Información");
         info.setMnemonic('i');
-
-        salir = new JMenu("Salir");
-        salir.setMnemonic('s');
-
         miAyuda = new JMenuItem("Ayuda");
         miAyuda.setMnemonic('a');
         miAyuda.addActionListener(this);
@@ -66,6 +61,9 @@ public class Hipódromo extends JFrame implements ActionListener {
         miInfo.addActionListener(this);
         info.add(miInfo);
 
+        salir = new JMenu("Salir");
+        salir.setMnemonic('s');
+        
         miSalir = new JMenuItem("Salir");
         miSalir.setMnemonic('s');
         miSalir.addActionListener(this);
@@ -126,7 +124,7 @@ public class Hipódromo extends JFrame implements ActionListener {
             } else if (((JButton) e.getSource()) == btnCarreras) {
 
             } else if (((JButton) e.getSource()) == btnSaldo) {
-            }
+            } 
 
         } else if (((JMenuItem) e.getSource()).getActionCommand().equals("Ayuda")) {
             JOptionPane.showMessageDialog(null, mensajeAyuda, "Ayuda", JOptionPane.PLAIN_MESSAGE);
