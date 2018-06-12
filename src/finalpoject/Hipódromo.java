@@ -26,18 +26,18 @@ import sun.net.www.content.text.plain;
 public class Hipódromo extends JFrame implements ActionListener {
 
 //    private double[] cuota;
-    private JLabel lblTitulo, lblImg, lblSaldo;
+    protected JLabel lblTitulo, lblImg, lblSaldo;
     private JButton btnSaldo, btnApuesta, btnCarreras;
     private JMenuBar menu;
     private JMenu info, salir;
     private JMenuItem miAyuda, miInfo, miSalir;
-    private double saldo = 10.00;
+    protected double saldo = 10.00;
     private String mensajeAyuda = "Para poder apostar primero debes ingresa dinero.\n"
             + "Para poder ver carreras sin apostar deberá tener dinero en la cuenta y seleccionar"
             + " \"CaballosTV\", que emite una de las carreras de caballos que hay dentro del recinto.\n"
             + "La opción de \"Comprobar saldo\" le permitirá ver si tiene saldo en su cuenta, su historial"
             + " de apuestas y le da la posibilidad de retirar el dinero, siempre que cumpla los requisitos "
-            + "minimos de retirada(30 euros)\n"
+            + "minimos de retirada(15 euros)\n"
             + "Para más información póngase en contacto con nosotros en la siguiente dirección:  "
             + "NOTMO@hipodromovivas.com";
 
@@ -94,7 +94,7 @@ public class Hipódromo extends JFrame implements ActionListener {
         btnCarreras.addActionListener(this);
         this.add(btnCarreras);
 
-        btnSaldo = new JButton("<html>Comprobar saldo</html>");
+        btnSaldo = new JButton("<html>Saldo</html>");
         btnSaldo.setSize(150, 80);
         btnSaldo.setLocation(50, 400);
         btnSaldo.addActionListener(this);
@@ -115,8 +115,8 @@ public class Hipódromo extends JFrame implements ActionListener {
                 //            for(int i=0;i<cuota.length;i++){
                 //                cuota[i]=Math.random()*4+1;
                 //            }
-                Apuesta bet = new Apuesta(this);
-                bet.setSize(300, 250);
+                Apuesta bet = new Apuesta(this,saldo);
+                bet.setSize(300, 300);
                 bet.setLocationRelativeTo(null);
                 bet.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 bet.setVisible(true);
@@ -124,6 +124,11 @@ public class Hipódromo extends JFrame implements ActionListener {
             } else if (((JButton) e.getSource()) == btnCarreras) {
 
             } else if (((JButton) e.getSource()) == btnSaldo) {
+                Saldo s=new Saldo(this,saldo);
+                s.setSize(300, 200);
+                s.setLocationRelativeTo(null);
+                s.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                s.setVisible(true);
             } 
 
         } else if (((JMenuItem) e.getSource()).getActionCommand().equals("Ayuda")) {
