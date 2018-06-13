@@ -1,0 +1,129 @@
+﻿
+
+NUEVA ENTRADA 10:12-13
+-------------------
+Caballo:  M.Rajoy Runner       1,787
+Importe:  5.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 10:13-13
+-------------------
+Caballo:  Astronauta Carrero   2,063
+Importe:  5.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 10:14-13
+-------------------
+Caballo:  Caudillo Unihuevo    2,107
+Importe:  5.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 10:15-13
+-------------------
+
+NUEVA ENTRADA 10:15-13
+-------------------
+Caballo:  Astronauta Carrero   1,958
+Importe:  5.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 10:51-13
+-------------------
+Caballo:  MuyEspañol Rivera    1,776
+Importe:  5.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 10:52-13
+-------------------
+
+NUEVA ENTRADA 10:54-13
+-------------------
+Caballo:  Caudillo Unihuevo    2,649
+Importe:  5.0
+[PERDIDA]
+-------------------
+Caballo:  Caudillo Unihuevo    1,793
+Importe:  5.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 11:6-13
+-------------------
+Caballo:  M.Rajoy Runner       2,267
+Importe:  5.0
+[PERDIDA]
+-------------------
+Caballo:  Caudillo Unihuevo    2,114
+Importe:  2.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 11:30-13
+-------------------
+Caballo:  Elefante JuanKarlos  1,786
+Importe:  5.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 11:48-13
+-------------------
+Caballo:  Astronauta Carrero   1,552
+Importe:  5.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 11:48-13
+-------------------
+Caballo:  Caudillo Unihuevo    1,504
+Importe:  5.0
+[PERDIDA]
+-------------------
+Caballo:  Caudillo Unihuevo    2,868
+Importe:  5.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 11:56-13
+-------------------
+Caballo:  PabloIglesias´s Dog  1,732
+Importe:  5.0
+[GANADA]   #Cantidad8.658440928891993
+-------------------
+
+NUEVA ENTRADA 12:6-13
+-------------------
+Caballo:  Elefante JuanKarlos  1,866
+Importe:  5.0
+[GANADA]   #Cantidad9.328042135133082
+-------------------
+
+NUEVA ENTRADA 12:8-13
+-------------------
+Caballo:  MuyEspañol Rivera    1,794
+Importe:  5.0
+[GANADA]   #Cantidad8.972146350869341
+-------------------
+Caballo:  null
+Importe:  0.0
+[PERDIDA]
+-------------------
+
+NUEVA ENTRADA 12:22-13
+-------------------
+Caballo:  null
+Importe:  0.0
+[PERDIDA]
+-------------------
+Caballo:  MuyEspañol Rivera    2,042
+Importe:  7.0
+[GANADA]   #Cantidad14.290609183724563
+-------------------
+Caballo:  M.Rajoy Runner       1,705
+Importe:  10.0
+[GANADA]   #Cantidad17.04679397286974
+-------------------

@@ -32,6 +32,7 @@ public class Hipódromo extends JFrame implements ActionListener {
     private JMenu info, salir;
     private JMenuItem miAyuda, miInfo, miSalir;
     protected double saldo = 10.00;
+    protected boolean flagCarrera = false;
     private String mensajeAyuda = "Para poder apostar primero debes ingresa dinero.\n"
             + "Para poder ver carreras sin apostar deberá tener dinero en la cuenta y seleccionar"
             + " \"CaballosTV\", que emite una de las carreras de caballos que hay dentro del recinto.\n"
@@ -63,7 +64,7 @@ public class Hipódromo extends JFrame implements ActionListener {
 
         salir = new JMenu("Salir");
         salir.setMnemonic('s');
-        
+
         miSalir = new JMenuItem("Salir");
         miSalir.setMnemonic('s');
         miSalir.addActionListener(this);
@@ -115,21 +116,30 @@ public class Hipódromo extends JFrame implements ActionListener {
                 //            for(int i=0;i<cuota.length;i++){
                 //                cuota[i]=Math.random()*4+1;
                 //            }
-                Apuesta bet = new Apuesta(this,saldo);
-                bet.setSize(300, 300);
+                flagCarrera = true;
+                Apuesta bet = new Apuesta(this, saldo, flagCarrera);
+                bet.setSize(300, 350);
                 bet.setLocationRelativeTo(null);
                 bet.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 bet.setVisible(true);
 
+                lblSaldo.setText("Saldo = " + saldo + " €");
+
             } else if (((JButton) e.getSource()) == btnCarreras) {
+                flagCarrera = false;
+                Apuesta bet = new Apuesta(this, saldo, flagCarrera);
+                bet.setSize(300, 350);
+                bet.setLocationRelativeTo(null);
+                bet.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                bet.setVisible(true);
 
             } else if (((JButton) e.getSource()) == btnSaldo) {
-                Saldo s=new Saldo(this,saldo);
+                Saldo s = new Saldo(this, saldo);
                 s.setSize(300, 200);
                 s.setLocationRelativeTo(null);
                 s.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 s.setVisible(true);
-            } 
+            }
 
         } else if (((JMenuItem) e.getSource()).getActionCommand().equals("Ayuda")) {
             JOptionPane.showMessageDialog(null, mensajeAyuda, "Ayuda", JOptionPane.PLAIN_MESSAGE);

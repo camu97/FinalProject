@@ -25,23 +25,22 @@ public class Saldo extends JDialog implements ActionListener {
     private JMenuBar menu;
     private JMenu ConsultarApuesta;
     private JMenuItem miConsultarApuesta;
-    protected double saldo;
+//    protected double saldo;
     protected boolean flagIngresar, flagRetirar;
     protected JComboBox<String> cbMetodo;
     protected JTextField txfNumero, txfImporte;
     protected JButton btnCancelar, btnAceptar;
     protected JLabel lblMetodo, lblImporte;
     protected String[] metodos = {
-        "Número de cuenta",
-        "PaysafeCard",
-        "Cuenta PayPal"
+        "Transferencia",
+        "PaySafeCard",
+        "PayPal"
     };
 
     public Saldo(Hipódromo h, double saldo) {
         super(h, true);
         setLayout(null);
         setTitle("Saldo");
-        this.saldo = saldo;
 
         menu = new JMenuBar();
         this.setJMenuBar(menu);
@@ -151,25 +150,34 @@ public class Saldo extends JDialog implements ActionListener {
                 btnCancelar.setVisible(true);
             }
             if (e.getSource() == btnAceptar) {
-                double importe, numero;
+                double importe;
+                int numero;
                 try {
-                    numero = Double.parseDouble(txfNumero.getText());
+                    numero = Integer.parseInt(txfNumero.getText());
                     importe = Double.parseDouble(txfImporte.getText());
-                    if (importe <= 0 || (importe > saldo && flagRetirar)) {
+                    if (importe <= 0 || (importe > h.saldo && flagRetirar)) {
                         throw new NumberFormatException();
+                    }
+                    if(txfNumero.getText().length()<16 && cbMetodo.getSelectedItem().equals("PaySafeCard")){
+                        JOptionPane.showMessageDialog(null, "<html>Codigo de PaySafeCard incorrecto</html>", "ERROR", JOptionPane.ERROR_MESSAGE);
+                        flagIngresar=false;
+                        flagRetirar=false;
+                    }
+                    if(txfNumero.getText().length()<16 && !cbMetodo.getSelectedItem().equals("PaySafeCard")){
+                        JOptionPane.showMessageDialog(null, "<html>Numero de cuenta incorrecta</html>", "ERROR", JOptionPane.ERROR_MESSAGE);
+                        flagIngresar=false;
+                        flagRetirar=false;
                     }
                     if (flagIngresar) {
                         JOptionPane.showMessageDialog(null, "<html>Ingreso de " + importe + " €<br/> correctamente realizado</html>", "Ingresar", JOptionPane.INFORMATION_MESSAGE);
-                        saldo += importe;
-                        h.saldo = saldo;
-                        h.lblSaldo.setText("Saldo = " + saldo + " €");
+                        h.saldo += importe;
+                        h.lblSaldo.setText("Saldo = " + h.saldo + " €");
                         super.dispose();
                     }
                     if (flagRetirar) {
                         JOptionPane.showMessageDialog(null, "<html>Retirada de " + importe + " €<br/> correctamente realizado</html>", "Retirar", JOptionPane.INFORMATION_MESSAGE);
-                        saldo =saldo- importe;
-                        h.saldo = saldo;
-                        h.lblSaldo.setText("Saldo = " + saldo + " €");
+                        h.saldo =h.saldo- importe;
+                        h.lblSaldo.setText("Saldo = " + h.saldo + " €");
                         super.dispose();
                     }
                     flagIngresar = false;
