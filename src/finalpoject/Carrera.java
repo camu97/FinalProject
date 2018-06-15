@@ -85,7 +85,7 @@ public class Carrera extends JDialog implements ActionListener {
                             flagFin = false;
                             try (PrintWriter pw = new PrintWriter(new FileWriter("historialApuestas.txt", true))) {
                                 pw.println("Caballo:  " + a.cbCaballos.getSelectedValue());
-                                pw.println("Importe:  " + a.importe);
+                                pw.println(String.format("Importe:  %.3f", a.importe));
                                 if (flagApuesta) {
                                     pw.println(String.format("[GANADA]   #Cantidad: %.3f", a.importe*a.cuota[i]));
                                 } else {
