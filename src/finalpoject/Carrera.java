@@ -87,7 +87,7 @@ public class Carrera extends JDialog implements ActionListener {
                                 pw.println("Caballo:  " + a.cbCaballos.getSelectedValue());
                                 pw.println("Importe:  " + a.importe);
                                 if (flagApuesta) {
-                                    pw.println("[GANADA]   #Cantidad"+ a.importe*a.cuota[i]);
+                                    pw.println(String.format("[GANADA]   #Cantidad: %.3f", a.importe*a.cuota[i]));
                                 } else {
                                     pw.println("[PERDIDA]");
                                 }
